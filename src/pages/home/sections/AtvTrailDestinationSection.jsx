@@ -7,7 +7,7 @@ const AtvTrailDestinationSection = () => {
         <div className="mx-auto absolute w-full h-dvh top-20 py-20 z-[1]">
           <h2 className="text-5xl uppercase ">
             <span className="font-bold">ATV Trail</span> <br />
-            Destinations
+            Destinationss
           </h2>
         </div>
         <div className="absolute grid grid-cols-1 md:grid-cols-4 w-full bottom-0 -translate-y-10 px-40">
