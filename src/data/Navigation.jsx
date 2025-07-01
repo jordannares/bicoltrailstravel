@@ -7,7 +7,7 @@ const routes = [
   {
     id: 2,
     name: "ATV Trails",
-    path: "/atv-trails",
+    path: "/atvtrails",
   },
   {
     id: 3,
