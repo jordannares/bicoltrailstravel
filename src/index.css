@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Solitreo&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+
+    --primary: 250 47% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 213 31% 91%;
+
+    --card: 222 47% 8%;
+
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
+
+    --border: 217 33% 20%;
+  }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Inter;
+    background-color: var(--background);
+  }
+
+  .hero-background {
+    background-image: url(assets/bg-mayon11.png);
+  }
+
+  .atv-riding {
+    background-image: url(assets/atv-adventure.png);
+  }
+
+  .lets-go {
+    font-family: Solitreo;
+  }
+  /* Slider */
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: #444; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.4;
+    transform: scale(0.8); */
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    background-size: contain;
+    background-position: bottom;
+  }
+}
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  /* border-radius: 20px; */
+}
+
+@utility max-container {
+  @apply max-w-[1300px];
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@keyframes scaleInOut {
+  0%,
+  100% {
+    transform: "scale(1)";
+  }
+  50% {
+    transform: "scale(1.1)";
+  }
+}
+
+/* @utility scaleInOut {
+  @apply transition-all duration-300 ease-in-out bg-linear-30;
+} */
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  /* overflow: hidden;
+  height: 100vh; */
+}
