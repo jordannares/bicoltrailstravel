@@ -44,7 +44,12 @@ const AtvAdventuresCollectionsSlider = () => {
           slideShadows: false,
         }}
         modules={[Navigation, Autoplay, EffectCoverflow]}
-        style={{ height: "500px" }}
+        style={{
+          height: "500px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
         className="mySwiper"
       >
         <SwiperSlide

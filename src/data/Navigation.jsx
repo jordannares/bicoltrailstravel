@@ -7,12 +7,12 @@ const routes = [
   {
     id: 2,
     name: "ATV Trails",
-    path: "/atvtrails",
+    path: "/atv-trails",
   },
   {
     id: 3,
-    name: "Pricing",
-    path: "/pricing",
+    name: "Discover",
+    path: "/discover",
   },
   // {
   //   id: 1,

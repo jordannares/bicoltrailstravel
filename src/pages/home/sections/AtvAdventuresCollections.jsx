@@ -19,7 +19,7 @@ const AtvAdventuresCollections = () => {
 
     const discovertl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".discovertitle",
+        trigger: "#discover",
         start: "top center",
         end: "bottom center",
         // scrub: 1,
@@ -41,16 +41,28 @@ const AtvAdventuresCollections = () => {
       stagger: 0.01,
       delay: 0,
     });
+    discovertl.fromTo(
+      ".discoverbtn",
+      { opacity: 0, yPercent: 50 }, // from
+      {
+        opacity: 1,
+        yPercent: 0,
+        duration: 0.5,
+        // stagger: 0.01,
+        ease: "power1.inOut",
+        delay: 0,
+      } // to
+    );
   });
 
   return (
-    <section ref={discoverRef} className="py-0 ">
+    <section id="discover" ref={discoverRef} className="py-0 bg-[#f6ffff]">
       <div className="mx-auto max-container px-4 md:px-6 mg:px-20">
         <div className="w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center gap-x-20">
-          <div className="w-full sm:w-full lg:w-[800px] rounded-2xl">
+          <div className="w-full sm:w-full lg:w-[700px] rounded-2xl">
             <AtvAdventuresCollectionsSlider />
           </div>
-          <div className="w-full mb-10 lg:mb-0 lg:w-[30%] flex flex-col text-left items-start">
+          <div className="scrollhere w-full mb-10 lg:mb-0 lg:w-[30%] flex flex-col text-left items-start">
             <h2 className="discovertitle text-5xl uppercase ">
               Unveil the <br /> Wonders of <br />
               Bicol
@@ -59,7 +71,7 @@ const AtvAdventuresCollections = () => {
               Discover the beauty of Mayon Volcano, pristine beaches, and local
               culture.
             </p>
-            <Link className="discoverbtn bg-gray-300 text-[18px] px-6 py-4 mt-5 uppercase rounded-4xl shadow-2xl transition hover:scale-110 hover:bg-[#FF5652] hover:text-white z-[1]">
+            <Link className="discoverbtn bg-gray-300 text-[16px] font-semibold px-4 py-3 mt-5 rounded-4xl shadow-2xl hover:scale-110 transition hover:bg-[#FF5652] hover:text-white z-[1]">
               Discover Bicol
             </Link>
           </div>
