@@ -5,6 +5,7 @@ import Navbar from "./layouts/navbar/Navbar";
 import AboutUs from "./pages/about";
 import ContactUs from "./pages/contact";
 import Home from "./pages/home";
+import Atvtrails from "./pages/atvtrails";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
+        <Route path="/atv-trails" element={<Atvtrails />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<NotFound />} />
