@@ -35,7 +35,7 @@ const AtvTrails = () => {
                 </button>
               ))}
             </div>
-            <button onMouseMove={handleClick}>CLKick Here</button>
+            <button onClick={handleClick}>CLKick Here</button>
             <div>
               {/* {tablist === "overview" && <div>Overview</div>}
               {tablist === "itinerary" && <div>AtvTrailOptions</div>}
