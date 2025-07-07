@@ -71,7 +71,10 @@ const AtvAdventuresCollections = () => {
               Discover the beauty of Mayon Volcano, pristine beaches, and local
               culture.
             </p>
-            <Link className="discoverbtn bg-gray-300 text-[16px] font-semibold px-4 py-3 mt-5 rounded-4xl shadow-2xl hover:scale-110 transition hover:bg-[#FF5652] hover:text-white z-[1]">
+            <Link
+              className="discoverbtn bg-gray-300 text-[16px] font-semibold px-4 py-3 mt-5 rounded-4xl shadow-2xl hover:scale-110 transition hover:bg-[#FF5652] hover:text-white z-[1]"
+              to="/discover"
+            >
               Discover Bicol
             </Link>
           </div>

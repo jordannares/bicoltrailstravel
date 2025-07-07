@@ -48,7 +48,10 @@ const Hero = () => {
                       alt="Lets go arrow"
                     />
                   </div>
-                  <Link className="bg-gray-300 text-[20px] font-semibold px-6 py-4 rounded-4xl shadow-2xl transition hover:scale-110 hover:bg-[#FF5652] hover:text-white z-[1]">
+                  <Link
+                    className="bg-gray-300 text-[20px] font-semibold px-6 py-4 rounded-4xl shadow-2xl transition hover:scale-110 hover:bg-[#FF5652] hover:text-white z-[1]"
+                    to="/discover"
+                  >
                     Explore Bicol
                   </Link>
                 </div>

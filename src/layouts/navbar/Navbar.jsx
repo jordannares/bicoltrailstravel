@@ -4,7 +4,7 @@ import logo from "../../assets/logo/bicoltrailstravel-logo.svg";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-console.log(routes);
+// console.log(routes);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
