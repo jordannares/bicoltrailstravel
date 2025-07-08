@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TabList from "../components/TabList";
+// import TabList from "../components/TabList";
 
 const tabs = [
   {
@@ -17,31 +17,28 @@ const tabs = [
 ];
 
 const Tabs = () => {
-  const [isCurrentTab, setIsCurrentTab] = useState(0);
+  const [isActiveTab, setIsActiveTab] = useState(0);
 
-  //   const activeTab = isCurrentTab ? "active" : "";
-
-  console.log(isCurrentTab);
+  console.log(isActiveTab);
 
   return (
-    <section className="mt-10">
+    <section className="mt-10 relative z-[1]">
       <div className="mx-auto max-container grid grid-col-1 lg:grid-cols-5">
         <main className="col-span-3 ">
-          <div className="flex items-center justify-start gap-x-3">
+          <div className="flex items-center justify-start">
             {tabs.map((tab) => (
               <button
-                className={`${
-                  tab.id === isCurrentTab ? "bg-amber-500" : "text-blue"
-                } px-4 py-2 border-[1px] border-gray-800 rounded-4xl transition-all cursor-pointer`}
+                className={`px-4 py-2 border-[1px] border-gray-800 rounded-4xl transition-all cursor-pointer 
+                  ${tab.id === isActiveTab ? "bg-amber-500" : "bg-gray-200"}`}
                 key={tab.id}
-                onClick={() => setIsCurrentTab(tab.id)}
+                onClick={() => setIsActiveTab(tab.id)}
               >
                 {tab.title}
               </button>
             ))}
           </div>
           <div className="py-10">
-            {isCurrentTab === 0 && (
+            {isActiveTab === 0 && (
               <div className="text-left">
                 <h1 className="font-semibold">Overview</h1>
                 <p className="mt-4">
@@ -52,8 +49,8 @@ const Tabs = () => {
                 </p>
               </div>
             )}
-            {isCurrentTab === 1 && <div>tab 1</div>}
-            {isCurrentTab === 2 && <div>tab 2</div>}
+            {isActiveTab === 1 && <div>tab 1</div>}
+            {isActiveTab === 2 && <div>tab 2</div>}
           </div>
         </main>
         <aside className="col-span-2">side</aside>
