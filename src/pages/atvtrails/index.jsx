@@ -2,70 +2,100 @@ import Footer from "../../layouts/footer";
 import Banner from "./sections/Banner";
 import Booking from "../home/sections/Booking";
 import TabItem from "../../components/TabItem";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import StickyTab from "./components/StickyTab";
+import Tabs, { useTabs } from "./components/Tabs";
+import Tablist from "./components/Tablist";
+import TabPanel from "./components/TabPanel";
 
 const tabs = [
   { id: 0, title: "overview" },
-  { id: 1, title: "itinerary" },
-  { id: 2, title: "pricing" },
+  { id: 1, title: "atv trail options" },
+  { id: 2, title: "details" },
 ];
 const AtvTrails = () => {
-  const [isActiveTab, setIsActiveTab] = useState(0);
+  // const { activeTab, setActiveTab } = useTabs();
 
-  console.log(isActiveTab);
+  // const [isActiveTab, setIsActiveTab] = useState(0);
 
-  const handleClick = () => {
-    console.log("dasdsa");
+  const overviewRef = useRef();
+  const reviewsRef = useRef();
+  const detailsRef = useRef();
+
+  const sectionRefs = {
+    0: overviewRef,
+    1: reviewsRef,
+    2: detailsRef,
   };
 
+  // const handleClickTab = (tabId) => {
+  //   sectionRefs[tabId].current?.scrollIntoView({
+  //     behavior: "smooth",
+  //     block: "start",
+  //   });
+  //   setActiveTab(tabId);
+  // };
+
+  // console.log(tabs);
   return (
     <>
       <Banner />
-      <section className="mt-10">
+      <section className="relative mt-20">
         <div className="mx-auto max-container grid grid-cols-1 lg:grid-cols-5 gap-x-8 space-y-4">
-          <main className="mx-auto col-span-3">
-            <div className="flex flex-wrap gap-3 space-y-2 md:space-y-0">
-              {tabs.map((tab) => (
-                <button
-                  className="text-amber-900 cursor-pointer"
-                  key={tab.id}
-                  onClick={() => setIsActiveTab(tab.id)}
-                >
-                  {tab.title}
-                </button>
-              ))}
+          <main className="relative z-[1] mx-auto col-span-3 w-full">
+            <div className="flex flex-wrap justify-start gap-3 space-y-2 md:space-y-0">
+              {/* <StickyTab> */}
+
+              <Tabs>
+                <Tablist>
+                  {tabs.map((tab, i) => (
+                    <TabItem
+                      scrollref={sectionRefs[tab.id]}
+                      key={i}
+                      id={tab.id}
+                      title={tab.title}
+                    >
+                      {tab.title}
+                    </TabItem>
+                  ))}
+                </Tablist>
+
+                <TabPanel id={0} ref={overviewRef}>
+                  <div className=" mx-auto max-container mr-10">
+                    <h3 className="text-left font-semibold mb-2">Overview</h3>
+                    <p className="text-sm text-left text-gray-600">
+                      Experience fun and adventure at its finest as you ride
+                      through forests, rivers, rice fields,
+                    </p>
+                  </div>
+                </TabPanel>
+                <TabPanel id={1} ref={reviewsRef}>
+                  <div className=" mx-auto max-container mr-10">
+                    <h3 className="text-left font-semibold mb-2">
+                      ATV Trail Options
+                    </h3>
+                    <p className="text-sm text-left text-gray-600">
+                      Experience fun and adventure at its finest as you ride
+                      through forests, rivers, rice fields,
+                    </p>
+                  </div>
+                </TabPanel>
+                <TabPanel id={2} ref={detailsRef}>
+                  <div className=" mx-auto max-container mr-10">
+                    <h3 className="text-left font-semibold mb-2">Details</h3>
+                  </div>
+                  <p className="text-sm text-left text-gray-600">
+                    Experience fun and adventure at its finest as you ride
+                    through forests, rivers, rice fields,
+                  </p>
+                </TabPanel>
+              </Tabs>
+
+              {/* </StickyTab> */}
             </div>
-            <button onClick={handleClick}>CLKick Here</button>
-            <div>
-              {/* {tablist === "overview" && <div>Overview</div>}
-              {tablist === "itinerary" && <div>AtvTrailOptions</div>}
-              {tablist === "pricing" && <div>Details</div>} */}
-            </div>
-            {/* <div id="overview" className="mx-auto max-container mt-10">
-              <h3 className="text-left font-semibold mb-2">Overview</h3>
-              <p className="text-sm text-left text-gray-600">
-                Experience fun and adventure at its finest as you ride through
-                forests, rivers, rice fields, and thousands of volcanic rocks
-                along these exciting trails See beautiful sceneries around and
-                gaze at the beauty of perfect cone-shaped Mayon Volcano
-                Experience the best it in Bicol trip by riding your way up to
-                the Philippines' most iconic volcano! Spectacular views of
-                beautiful lava formations, lush forests, and pristine rivers
-                Vehicle Information: In most cases, groups of 1-4pax will be
-                served using SUV type of vehicle. If the client requests for
-                bigger vehicle type i.e., AUV/Van, there will be a surcharge of
-                P500. Groups of 5-10pax will be served using AUV/Van type of
-                vehicle. If for any reason that the available vehicle for Group
-                of 5-7pax is SUV and with guests approval, the client will be
-                entitled to a refund of P500.
-              </p>
-            </div>
-            <div id="atvtrailoptions" className="">
-              Atv trail options
-            </div> */}
           </main>
 
-          <aside className="mx-auto w-full bg-white col-span-2  ">
+          <aside className="relative mx-auto w-full bg-white col-span-2  ">
             <div className="shadow-lg border-[1px] border-gray-500 rounded-2xl overflow-hidden">
               <div className="py-2 bg-red-200">
                 <h3 className="font-bold text-2xl">Starting from ₱ 1,550.00</h3>

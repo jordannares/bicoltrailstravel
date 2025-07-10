@@ -3,11 +3,13 @@ import routes from "../../data/Navigation";
 import logo from "../../assets/logo/bicoltrailstravel-logo.svg";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import TabItem from "../../components/TabItem";
 
 // console.log(routes);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isActiveTab, setIsActiveTab] = useState(0);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -71,6 +73,8 @@ const Navbar = () => {
             </div>
           </div>
         )}
+
+        {/* sticky tab */}
       </div>
     </header>
   );
