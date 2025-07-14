@@ -2,14 +2,26 @@ import { Link } from "react-router-dom";
 import routes from "../../data/Navigation";
 import logo from "../../assets/logo/bicoltrailstravel-logo.svg";
 import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Children, useEffect, useRef, useState } from "react";
+import Tabs from "../../pages/atvtrails/components/Tabs";
+import Tablist from "../../pages/atvtrails/components/Tablist";
 import TabItem from "../../components/TabItem";
+import sections from "../../data/Tabs";
 
 // console.log(routes);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [isActiveTab, setIsActiveTab] = useState(0);
+
+  const overviewRef = useRef();
+  const atvtrailoptions = useRef();
+  const detailsRef = useRef();
+
+  const sectionRefs = {
+    0: overviewRef,
+    1: atvtrailoptions,
+    2: detailsRef,
+  };
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -73,9 +85,24 @@ const Navbar = () => {
             </div>
           </div>
         )}
-
-        {/* sticky tab */}
       </div>
+      {/* <div className="bg-amber-300 w-full">
+        <Tabs defaultTab="overview">
+          <Tablist>
+            {sections.map((s) => (
+              <TabItem
+                scrollref={sectionsRef.current[s.id]}
+                key={s.id}
+                id={s.id}
+                activeTabb={activeTab}
+                title={s.title}
+              >
+                {activeTabb}
+              </TabItem>
+            ))}
+          </Tablist>
+        </Tabs>
+      </div> */}
     </header>
   );
 };
