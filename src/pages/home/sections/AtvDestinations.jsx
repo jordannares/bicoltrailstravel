@@ -108,7 +108,7 @@ const AtvDestinations = () => {
       >
         <div className="mx-auto relative max-container min-h-screen flex flex-col md:flex-row-reverse items-center justify-center gap-x-30 overflow-hidden px-10">
           <div className="">
-            <h2 className="text-3xl uppercase font-bold">Green Lave trail</h2>
+            <h2 className="text-3xl uppercase font-bold">Green Lava trail</h2>
             <p className="text-24">Click here for details</p>
           </div>
           <div className=" relative mt-10">
@@ -124,7 +124,7 @@ const AtvDestinations = () => {
       <section ref={slideRightLeftRef} className="relative overflow-hidden">
         <div className="mx-auto relative max-container min-h-screen flex flex-col md:flex-row items-center justify-center gap-x-30 overflow-hidden px-10">
           <div className="">
-            <h2 className="text-3xl uppercase font-bold">Black Lave trail</h2>
+            <h2 className="text-3xl uppercase font-bold">Black Lava trail</h2>
             <p className="text-24">Click here for details</p>
           </div>
           <div className=" relative mt-10">

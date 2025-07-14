@@ -9,6 +9,7 @@ const Home = () => {
     <div className="">
       <Hero />
       <AtvAdventuresCollections />
+
       <AtvDestinations />
       <Booking />
       <Footer />

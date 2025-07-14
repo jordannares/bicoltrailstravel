@@ -11,8 +11,8 @@ const routes = [
   },
   {
     id: 3,
-    name: "Pricing",
-    path: "/pricing",
+    name: "Discover",
+    path: "/discover",
   },
   // {
   //   id: 1,
@@ -33,66 +33,6 @@ const routes = [
   //   id: 1,
   //   name: "Home",
   //   path: "/",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 1,
-  //   name: "Home",
-  //   path: "/",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 1,
-  //   name: "Home",
-  //   path: "/",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
   // },
 ];
 
