@@ -4,11 +4,11 @@ const TabsContext = createContext();
 
 export const useTabs = () => useContext(TabsContext);
 
-const Tabs = ({ defaultTab, scrollref, children }) => {
+const Tabs = ({ defaultTabbb, defaultTab, scrollreff, children }) => {
   const [activeTab, setActiveTab] = useState(defaultTab);
   // console.log(defaultTab);
   return (
-    <TabsContext value={{ defaultTab, scrollref, activeTab, setActiveTab }}>
+    <TabsContext value={{ defaultTabbb, scrollreff, activeTab, setActiveTab }}>
       {children}
     </TabsContext>
   );

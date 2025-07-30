@@ -2,10 +2,12 @@ import React from "react";
 import Footer from "../../layouts/footer";
 import Booking from "../home/sections/Booking";
 import Banner from "./sections/Banner";
+import Navbar from "../../layouts/navbar/Navbar";
 
 const AboutUs = () => {
   return (
     <>
+      <Navbar />
       <Banner />
       <section className="py-10 ">
         <div className="mx-auto max-container ">

@@ -1,33 +1,19 @@
 import { forwardRef } from "react";
-import { useTabs } from "./Tabs";
+// import { useTabs } from "./Tabs";
+import AtvTrailOptions from "./AtvTrailOptions";
+import Details from "../sections/Details";
+import Reviews from "../sections/Reviews";
+import Overview from "../sections/Overview";
 
-const TabPanel = forwardRef(({ id, children }, ref) => {
-  const { activeTab } = useTabs();
-
-  // return activeTab === id ? (
-  //   <div ref={ref} className="relative w-full mt-10 h-[300px]">
-  //     {children}
-  //   </div>
-  // ) : null;
-  console.log(children);
+const TabPanel = forwardRef(({ id }, ref) => {
+  // const { activeTab } = useTabs();
 
   return (
     <>
-      {activeTab === id && (
-        <div ref={ref} id="overview" className="relative w-full mt-10 ">
-          {children}
-        </div>
-      )}
-      {/* {activeTab === "atvtrailoptions" && (
-        <div ref={ref} id="atvtrail" className="relative w-full mt-10 ">
-          {children}
-        </div>
-      )}
-      {activeTab === "details" && (
-        <div ref={ref} id="details" className="relative w-full mt-10 ">
-          {children}
-        </div>
-      )} */}
+      {id === "overview" && <Overview ref={ref} />}
+      {id === "atvtrailoptions" && <AtvTrailOptions ref={ref} />}
+      {id === "details" && <Details ref={ref} />}
+      {id === "reviews" && <Reviews ref={ref} />}
     </>
   );
 });

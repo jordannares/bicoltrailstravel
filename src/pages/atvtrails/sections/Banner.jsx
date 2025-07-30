@@ -3,7 +3,7 @@ import React from "react";
 const Banner = () => {
   return (
     <section className="">
-      <div className="mx-auto relative max-container bg-[#FFF3F3] py-10 rounded-4xl overflow-hidden flex items-center">
+      <div className="mx-auto relative max-container bg-[#D3C8BB] py-10 rounded-4xl overflow-hidden flex items-center">
         <div className="absolute w-auto left-5">
           <img className="w-[250px]" src="/src/assets/atv-woman.png" alt="" />
         </div>

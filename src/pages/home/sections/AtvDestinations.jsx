@@ -84,13 +84,7 @@ const AtvDestinations = () => {
               ATV short right trail
             </h2>
             <p className="text-24">Click here for details</p>
-            {/* <CardTilt className="relative">
-              <img
-                className="box mt-10"
-                src="/src/assets/short-trail.png"
-                alt=""
-              />
-            </CardTilt> */}
+
             <div className="relative mt-10">
               <iframe
                 className="box aspect-video w-svw md:w-3xl rounded-2xl left-1/2 shadow-lg"

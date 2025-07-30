@@ -8,15 +8,17 @@ import Home from "./pages/home";
 import AtvTrails from "./pages/atvtrails";
 import Pricing from "./pages/pricing";
 import Discover from "./pages/discover";
+import WhatToExplore from "./pages/what-to-explore";
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route index element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/atv-trails" element={<AtvTrails />} />
+        <Route path="/what-to-explore" element={<WhatToExplore />} />
         <Route path="/discover" element={<Discover />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="*" element={<NotFound />} />

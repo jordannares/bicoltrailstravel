@@ -32,14 +32,21 @@ const Hero = () => {
 
         <div className="mx-auto min-h-screen ">
           <div className="mx-auto max-container gap-x-8 gap-y-16 sm:gap-y-20">
-            <div className="relative pt-35 lg:pt-20 xl:pt-50 lg:pr-4">
+            <div className="relative pt-35 lg:pt-20 xl:pt-60 lg:pr-4">
               <div className="sm:max-w-md lg:max-w-lg px-4">
                 <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl uppercase text-start">
                   Bicol <span className="">Wonders</span>
+                  {/* Escape. Explore.
+                  <br /> Enjoy Bicol */}
                 </h1>
+
+                {/* <p className="text-left">
+                  From lava-filled adventures to secret island escapes—your
+                  unforgettable journey starts here.
+                </p> */}
                 <div className="py-8 flex items-center justify-center text-start lg:text-center">
                   <div className="flex flex-col">
-                    <span className="text-4xl lets-go mr-5 text-[#FF5652]">
+                    <span className="text-4xl lets-go mr-5 text-[#E52020]">
                       Lets Go
                     </span>
                     <img
@@ -49,10 +56,10 @@ const Hero = () => {
                     />
                   </div>
                   <Link
-                    className="bg-gray-300 text-[20px] font-semibold px-6 py-4 rounded-4xl shadow-2xl transition hover:scale-110 hover:bg-[#FF5652] hover:text-white z-[1]"
+                    className="bg-[#FBA518] text-xl font-semibold px-6 py-4 rounded-4xl shadow-2xl transition hover:scale-110 hover:bg-[#E52020] hover:text-white z-[1]"
                     to="/discover"
                   >
-                    Explore Bicol
+                    Book Your Trip
                   </Link>
                 </div>
               </div>

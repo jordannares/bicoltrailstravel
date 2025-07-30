@@ -7,26 +7,9 @@ import Tabs from "./components/Tabs";
 import Tablist from "./components/Tablist";
 import TabPanel from "./components/TabPanel";
 import sections from "../../data/Tabs";
-import { Title } from "@radix-ui/react-toast";
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
+import Navbar from "../../layouts/navbar/Navbar";
 
 const AtvTrails = () => {
-  // const overviewRef = useRef();
-  // const atvtrailoptions = useRef();
-  // const detailsRef = useRef();
-
-  // const sectionRefs = {
-  //   0: overviewRef,
-  //   1: atvtrailoptions,
-  //   2: detailsRef,
-  // };
-
-  // const sections = [
-  //   { id: "overview", title: "Overview" },
-  //   { id: "atvtrailoptions", title: "ATV Trail Options" },
-  //   { id: "details", title: "Details" },
-  // ];
-
   const sectionsRef = useRef(
     sections.reduce((acc, section) => {
       acc[section.id] = React.createRef();
@@ -64,7 +47,6 @@ const AtvTrails = () => {
         setActiveTab(newActiveTab);
       }
 
-      // console.log(newVisible);
       setVisibleSections(newVisible);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -72,103 +54,26 @@ const AtvTrails = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeTab]);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (sectionRefs[0].current) {
-  //       const rec = sectionRefs[0].current.getBoundingClientRect();
-  //       setIsAtTop(rec.top <= 0);
-  //     }
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // console.log(sectionRefs.current[0].current);
-  // console.log(sectionsRef.current);
-  // console.log(activeTab);
   return (
     <>
-      <section className="relative z-10">
-        <div
-          // className="fixed w-full transition-all"
-          className={`fixed w-full transition-all
-          ${
-            activeTab !== sections[0].id
-              ? " bg-green-300 translate-y-0"
-              : " -translate-y-30 "
-          }`}
-        >
-          <div className="mx-auto max-container flex ">
-            <Tabs defaultTab={activeTab} scrollref={sectionsRef}>
-              {/* <Tablist>
-                {visibleSections.map((visibleSec) => (
-                  <TabItem
-                    scrollref={sectionsRef.current[visibleSec.id]}
-                    key={visibleSec.id}
-                    id={visibleSec.id}
-                    activeTabb={activeTab}
-                  >
-                    {visibleSec.title}
-                  </TabItem>
-                ))}
-              </Tablist> */}
-              <Tablist>
-                {sections.map((s) => (
-                  <TabItem
-                    scrollref={sectionsRef.current[s.id]}
-                    key={s.id}
-                    id={s.id}
-                    activeTabb={activeTab}
-                    // title={s.title}
-                  >
-                    {s.title}
-                  </TabItem>
-                ))}
-              </Tablist>
-            </Tabs>
-          </div>
-          {/* <Tabs>
-            <Tablist>
-              {tabs.map((tab, i) => (
-                <TabItem
-                  // scrollref={sectionRefs[tab.id]}
-                  key={i}
-                  id={tab.id}
-                  title={tab.title}
-                >
-                  {tab.title}
-                </TabItem>
-              ))}
-            </Tablist>
-          </Tabs> */}
-        </div>
-      </section>
+      <Navbar
+        activeTabb={activeTab}
+        sectionsRef={sectionsRef}
+        defaultTab="overview"
+      />
+
       <Banner />
-      <section className="relative mt-20">
+      <section className="relative mt-10">
         <div className="mx-auto max-container grid grid-cols-1 lg:grid-cols-5 gap-x-8 space-y-4">
           <main className="relative z-[1] mx-auto col-span-3 w-full">
             <div className="flex flex-wrap justify-start gap-3 space-y-2 md:space-y-0">
               {/* <StickyTab> */}
 
-              {/* <div>
-                <div className="mx-auto max-container flex ">
-                  {visibleSections.map((id, i) => (
-                    <button className="cursor-pointer px-4 py-2" key={i}>
-                      {id}
-                    </button>
-                  ))}
-                </div>
-              </div> */}
-
-              {/* {sections.map((s) => (
-                <div key={s.id} id={s.id} ref={sectionsRef.current[s.id]}>
-                  {s.title}
-                </div>
-              ))} */}
-
-              <Tabs defaultTab={activeTab} scrollref={sectionsRef}>
+              <Tabs
+                defaultTabbb={activeTab}
+                defaultTab={activeTab}
+                scrollreff={sectionsRef}
+              >
                 <Tablist>
                   {sections.map((s) => (
                     <TabItem
@@ -182,139 +87,94 @@ const AtvTrails = () => {
                     </TabItem>
                   ))}
                 </Tablist>
-                {/* <Tablist>
-                  {tabs.map((tab, i) => (
-                    <TabItem
-                      scrollref={sectionRefs[tab.id]}
-                      key={i}
-                      id={tab.id}
-                      title={tab.title}
-                    >
-                      {tab.title}
-                    </TabItem>
-                  ))}
-                </Tablist> */}
-
-                {/* <TabPanel id="overview" ref={sectionsRef.current["overview"]}>
-                  <div className=" mx-auto max-container mr-10">
-                    <h3 className="text-left font-semibold mb-2">Overview</h3>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields,
-                    </p>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                  </div>
-                </TabPanel>
-                <TabPanel
-                  id="atvtrailoptions"
-                  ref={sectionsRef.current["atvtrailoptions"]}
-                >
-                  <div className=" mx-auto max-container mr-10">
-                    <h3 className="text-left font-semibold mb-2">
-                      ATV trail options
-                    </h3>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                    <p className="text-sm text-left text-gray-600">
-                      Experience fun and adventure at its finest as you ride
-                      through forests, rivers, rice fields, Lorem ipsum dolor
-                      sit amet consectetur adipisicing elit. Nobis ad, et minus
-                      voluptatibus ea debitis rerum repellat odio quaerat quis!
-                      Explicabo, quis in! Necessitatibus culpa aspernatur
-                      suscipit accusamus atque aliquam?
-                    </p>
-                  </div>
-                </TabPanel>
-                <TabPanel id="details" ref={sectionsRef.current["details"]}>
-                  <div className=" mx-auto max-container mr-10">
-                    <h3 className="text-left font-semibold mb-2">Details</h3>
-                  </div>
-                  <p className="text-sm text-left text-gray-600">
-                    Experience fun and adventure at its finest as you ride
-                    through forests, rivers, rice fields,
-                  </p>
-                </TabPanel> */}
               </Tabs>
 
-              {sections.map((s) => (
-                <section
-                  key={s.id}
-                  id={s.id}
-                  ref={sectionsRef.current[s.id]}
-                  className="min-h-[200px] scroll-mt-24"
-                >
-                  <h2>{s.title}</h2>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Recusandae, quod. Ipsum nesciunt explicabo ducimus aperiam
-                    quibusdam nisi, labore quo quia temporibus similique?
-                    Molestias repudiandae animi quisquam, nam expedita eius
-                    eaque!
-                  </p>
-                </section>
+              {sections.map((tabpanel) => (
+                <TabPanel
+                  key={tabpanel.id}
+                  id={tabpanel.id}
+                  ref={sectionsRef.current[tabpanel.id]}
+                />
               ))}
 
               {/* </StickyTab> */}
             </div>
           </main>
 
-          <aside className="relative mx-auto w-full bg-white col-span-2  ">
-            <div className="shadow-lg border-[1px] border-gray-500 rounded-2xl overflow-hidden">
-              <div className="py-2 bg-red-200">
-                <h3 className="font-bold text-2xl">Starting from ₱ 1,550.00</h3>
+          <aside className="relative mx-auto w-full bg-white col-span-2">
+            <div className=" rounded-2xl overflow-hidden">
+              <div className="py-6 px-8 bg-[#A89C29]">
+                <div className="flex items-end justify-center gap-x-2">
+                  <span className="text-md text-white font-semibold">
+                    Starting from
+                  </span>
+                  <span className="font-bold text-2xl text-white">
+                    ₱ 1,550.00
+                  </span>
+                </div>
+                <button className="w-full flex items-center justify-center mx-auto gap-x-2 mt-4 bg-[#C0B335] py-3 px-4 rounded-full text-white shadow-2xl/5 cursor-pointer font-semibold">
+                  <div className=""></div>
+                  <div>Reserve now & pay later</div>
+                </button>
+              </div>
+            </div>
+            <div className="mt-4">
+              <iframe
+                className="box aspect-video  w-full rounded-2xl left-1/2 shadow-lg"
+                src="https://www.youtube.com/embed/q2KqUlKN6ZU"
+                title="Exploring Bicol&#39;s Green Lava on an ATV Adventure!"
+              ></iframe>
+            </div>
+
+            <div className=" rounded-2xl overflow-hidden mt-4 border-[1px] border-gray-400 bg-gray-100">
+              <div className="py-6 px-8">
+                <h3 className="font-bold text-lg text-gray-800 text-left">
+                  Contact Information
+                </h3>
+                <div className="flex items-center gap-x-6 mt-5">
+                  <div className="flex items-center">
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="size-5 text-gray-600"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-2 font-semibold text-sm">
+                      jordannares21@gmail.com
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="size-5 text-gray-600"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"
+                        />
+                      </svg>
+                    </div>
+                    <div className="ml-2 font-semibold text-sm">
+                      +63 996 827 3744
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </aside>

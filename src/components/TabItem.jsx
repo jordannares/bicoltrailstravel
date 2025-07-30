@@ -1,46 +1,38 @@
-import { forwardRef, useState } from "react";
+import { useState } from "react";
 import { useTabs } from "../pages/atvtrails/components/Tabs";
+import { cn } from "../../src/utils/cn";
 
-const TabItem = forwardRef(({ id, activeTabb, children }, ref) => {
-  const { defaultTab, scrollref, activeTab, setActiveTab } = useTabs();
-  const isactive = activeTabb === id;
+const TabItem = ({ id, scrollref, activeTabb, children }) => {
+  const { defaultTabbb, scrollreff, activeTab, setActiveTab } = useTabs();
+  const isactive = defaultTabbb === id;
 
   const scrollTo = (tabId) => {
     setActiveTab(tabId);
 
-    scrollref.current[id].current?.scrollIntoView({
+    scrollreff.current[tabId]?.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
 
-    // scrollref?.current?.scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "start",
-    // });
-
-    // setTimeout(() => {
-    //   scrollref?.current?.scrollIntoView({
-    //     behavior: "smooth",
-    //     block: "start",
-    //   });
-    // }, 0);
-
-    scrollref?.current?.click();
+    scrollreff.current[tabId]?.current?.click();
+    // scrollref?.current?.click();
   };
 
-  // console.log(defaultTab);
   return (
     <>
       <button
-        ref={ref}
-        className={`border-[1px]  flex border-gray-400 cursor-pointer rounded-4xl px-4 py-2 transition-all font-semibold text-md
-                    ${isactive ? "bg-red-200 border-red-400" : "bg-gray-200"}`}
+        className={cn(
+          "flex border-[1px] border-gray-300 cursor-pointer rounded-4xl px-4 py-2 transition-all font-semibold text-[15px]",
+          isactive ? "bg-[#FBA518]/20 border-[#FBA518]" : "bg-gray-100/20"
+        )}
+        // className={`flex border-[1px] border-gray-300 cursor-pointer rounded-4xl px-4 py-2 transition-all font-semibold text-[15px]
+        //             ${isactive ? "bg-[#A89C29]/20" : "bg-gray-100/20"}`}
         onClick={() => scrollTo(id)}
       >
         {children}
       </button>
     </>
   );
-});
+};
 
 export default TabItem;
