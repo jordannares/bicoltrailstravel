@@ -11,89 +11,14 @@ const routes = [
   },
   {
     id: 3,
-    name: "Pricing",
-    path: "/pricing",
+    name: "What To Explore",
+    path: "/what-to-explore",
   },
-  // {
-  //   id: 1,
-  //   name: "Home",
-  //   path: "/",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 1,
-  //   name: "Home",
-  //   path: "/",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 1,
-  //   name: "Home",
-  //   path: "/",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 1,
-  //   name: "Home",
-  //   path: "/",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
-  // {
-  //   id: 2,
-  //   name: "About Us",
-  //   path: "/about-us",
-  // },
-  // {
-  //   id: 3,
-  //   name: "Contact Us",
-  //   path: "/contact-us",
-  // },
+  {
+    id: 4,
+    name: "Discover",
+    path: "/discover",
+  },
 ];
 
 export default routes;
