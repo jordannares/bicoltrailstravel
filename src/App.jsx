@@ -4,6 +4,7 @@ import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/about";
 import ContactUs from "./pages/contact";
 import Home from "./pages/home";
+import Navbar from "./layouts/navbar/Navbar";
 
 function App() {
   return (

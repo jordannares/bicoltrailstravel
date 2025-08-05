@@ -43,7 +43,7 @@ const Hero = () => {
                   </span>
                   <img
                     className="w-[130px] -mt-3"
-                    src="/src/assets/arrow-1.svg"
+                    src="./images/arrow-1.svg"
                     alt="Lets go arrow"
                   />
                 </div>
