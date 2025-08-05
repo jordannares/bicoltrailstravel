@@ -1,6 +1,5 @@
 import { Link, Route, Routes } from "react-router-dom";
 
-import NotFound from "./pages/NotFound";
 import AboutUs from "./pages/about";
 import ContactUs from "./pages/contact";
 import Home from "./pages/home";
