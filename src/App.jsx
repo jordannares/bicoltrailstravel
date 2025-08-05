@@ -1,14 +1,14 @@
 import { Link, Route, Routes } from "react-router-dom";
 
-import NotFound from "./pages/NotFound";
-import Navbar from "./layouts/navbar/Navbar";
+// import Navbar from "./layouts/navbar/Navbar";
 import AboutUs from "./pages/about";
 import ContactUs from "./pages/contact";
 import Home from "./pages/home";
 import AtvTrails from "./pages/atvtrails";
-import Pricing from "./pages/pricing";
+// import Pricing from "./pages/pricing";
 import Discover from "./pages/discover";
 import WhatToExplore from "./pages/what-to-explore";
+import NotFound from "./pages/errors/NotFound";
 
 function App() {
   return (
