@@ -7,7 +7,7 @@ const Button = ({ onClick, className, children }) => {
     <button
       className={cn(
         "bg-amber-200 rounded-full py-3 px-4 text-md font-bold text-white cursor-pointer ",
-        className
+        className,
       )}
       onClick={onClick}
     >

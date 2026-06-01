@@ -9,6 +9,7 @@ import AtvTrails from "./pages/atvtrails";
 import Discover from "./pages/discover";
 import WhatToExplore from "./pages/what-to-explore";
 import NotFound from "./pages/errors/NotFound";
+import Reservation from "./pages/reservation";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/what-to-explore" element={<WhatToExplore />} />
         <Route path="/discover" element={<Discover />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/reservation" element={<Reservation />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

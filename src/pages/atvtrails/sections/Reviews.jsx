@@ -12,7 +12,7 @@ const reviews = [
     date: "July 10, 2025",
   },
   {
-    id: 0,
+    id: 1,
     name: "MJ N",
     location: "Daraga",
     rating: "5",
@@ -33,7 +33,10 @@ const Reviews = ({ ref }) => {
           {/* <hr className=" border-gray-400" /> */}
           <h3 className="text-left mt-10 font-semibold text-lg">Reviews</h3>
           {reviews.map((r) => (
-            <div className="flex flex-col items-left justify-start text-left mt-10">
+            <div
+              key={r.id}
+              className="flex flex-col items-left justify-start text-left mt-10"
+            >
               <div className="flex items-center justify-start">
                 <div className="p-2 bg-emerald-700 rounded-full text-white">
                   <User size={24} strokeWidth={1} absoluteStrokeWidth />
