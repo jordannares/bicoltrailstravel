@@ -3,7 +3,7 @@ const Booking = () => {
     <>
       <section className="relative">
         <div className=" w-full min-h-auto absolute z-[0] bottom-0 md:-bottom-20">
-          <img src="/src/assets/atv-adventure.png" className="w-full" alt="" />
+          <img src="./images/atv-adventure.png" className="w-full" alt="" />
         </div>
         <div className="relative w-full pt-10 px-4">
           <div className="mx-auto max-container relative py-10">

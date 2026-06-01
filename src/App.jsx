@@ -22,8 +22,11 @@ function App() {
         <Route path="/what-to-explore" element={<WhatToExplore />} />
         <Route path="/discover" element={<Discover />} />
         <Route path="/contact-us" element={<ContactUs />} />
+<<<<<<< HEAD
         <Route path="/reservation" element={<Reservation />} />
         <Route path="*" element={<NotFound />} />
+=======
+>>>>>>> 1d83708e299ee7448468707fedb8ba9449f6582e
       </Routes>
     </>
   );

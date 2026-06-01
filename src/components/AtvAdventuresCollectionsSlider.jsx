@@ -67,7 +67,7 @@ const AtvAdventuresCollectionsSlider = () => {
       >
         <SwiperSlide
           style={{
-            backgroundImage: "url(/src/assets/collection-1.jpg)",
+            backgroundImage: "url(./images/collection-1.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -75,7 +75,7 @@ const AtvAdventuresCollectionsSlider = () => {
         ></SwiperSlide>
         <SwiperSlide
           style={{
-            backgroundImage: "url(/src/assets/collection-2.jpg)",
+            backgroundImage: "url(./images/collection-2.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -83,7 +83,7 @@ const AtvAdventuresCollectionsSlider = () => {
         ></SwiperSlide>
         <SwiperSlide
           style={{
-            backgroundImage: "url(/src/assets/collection-3.jpg)",
+            backgroundImage: "url(./src/assets/collection-3.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -91,7 +91,7 @@ const AtvAdventuresCollectionsSlider = () => {
         ></SwiperSlide>
         <SwiperSlide
           style={{
-            backgroundImage: "url(/src/assets/collection-4.jpg)",
+            backgroundImage: "url(./src/assets/collection-4.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
             backgroundSize: "cover",
